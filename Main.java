@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 import java.io.*;
 
@@ -8,21 +7,19 @@ class complex
     public int imaginary;
     
     Scanner in = new Scanner(System.in);
-    
 
     complex()
     {
         real=10;
         imaginary=20;
     }
-    
+
     complex(int a,int b)
     {
         real=a;
         imaginary=b;
     }
-    
-    
+
    public void getnumber( )
     {
         System.out.println("enter the real part");
@@ -46,19 +43,14 @@ class complex
             c.imaginary=a.imaginary-b.imaginary;
             return c;
         }
-        
 
-     
     complex multiplycomplexnumber (complex a,complex b,complex c)
         {
             c.real = a.real*b.real - a.imaginary* b.imaginary;
             c.imaginary = a.real*b.imaginary + a.imaginary* b.real;
             return c;
         }
-            
-    
-    
-    
+
     complex dividecomplexnumber (complex a,complex b,complex c)
         {
             c.real = (a.real*b.real + a.imaginary* b.imaginary) / (b.real * b.real +b.imaginary * b.imaginary );
@@ -75,11 +67,10 @@ public class Main {
         complex a = new complex();
         complex b = new complex (10,40);
         complex c = new complex ();
-        
 
         a.getnumber();
         b.getnumber();
-            
+   
         int choice =0 ;
         System.out.println("Menu");
         System.out.println("1.addition");
@@ -96,18 +87,17 @@ public class Main {
                 c=c.addcomplexnumber(a,b,c);
                 System.out.println("Complex Number addition  :"+c.real +"+("+ c.imaginary+")i");
                 break;
-                
-            
+
             case 2:
                 c=c.subcomplexnumber(a,b,c);
                 System.out.println("Complex Number substraction  :"+c.real +"+("+ c.imaginary+")i");
                 break; 
-                
+    
             case 3:
                 c=c.multiplycomplexnumber(a,b,c);
                 System.out.println("Multiplication of complex number :"+c.real +"+("+ c.imaginary+")i");
                 break;
-                
+
             case 4:
                 c=c.dividecomplexnumber(a,b,c);
                 System.out.println("Division of complex numbe"+  +c.real +"+("+ c.imaginary+")i");
@@ -115,13 +105,3 @@ public class Main {
         }
     }
 }
-    
-    
-    
-    
-    
-    
-
-
-
-
